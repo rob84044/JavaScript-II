@@ -56,21 +56,62 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
+
+runners.forEach(function(array){
+ fullName.push(`${array.first_name} ${array.last_name}`);
+});
+
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
+
+//Set variable to equal a new array
 let allCaps = [];
-console.log(allCaps); 
+//Use .map on the array runners and create an arrow function with runner as the place holder of each iterated upon object within the array
+runners.map((runner) => {
+ //Set the new array that was declared above to have the all capitalized first name of each first name object within the runners array (runner here is the place holder of each array object) and place them in the last position inside of the newly created array allCaps
+ allCaps.push(runner.first_name.toUpperCase());
+})
+//Print out the allCaps array to the console
+console.log(allCaps);
+
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
+
+//Create the new variable that is assigned to an empty array
 let largeShirts = [];
+//Use filter on the array runners and use the placeholder runner
+runners.filter((runner) => {
+ //Create an if statement that checks to see if the specified array value has a shirt size of "L" 
+ if (runner.shirt_size === 'L' ){
+  //If it does, then we are to take the first name, the last name, and the email of the user from that array object and push those values using string interpolation into the new array created above - largeShirts
+  largeShirts.push(` ${runner.first_name} ${runner.last_name} ${runner.email}`)
+  //Returns the value of the largegShirts array that now contains the new value
+  return largeShirts
+ } 
+})
+//Print out to the console the full array of LargeShirts
 console.log(largeShirts);
+
+
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
+
 let ticketPriceTotal = [];
+
+totalCost = (acc, cur) => acc + cur;
+
+runners.reduce((ticket) => {
+ if (ticket.donation = ""){
+  //Leave empty
+ }else {
+  
+ }
+})
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
