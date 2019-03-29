@@ -1,7 +1,11 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+let combineName = (function () {
+  let fName = "Robert";
+  return function () {let lName="Pedersen"; let fullName = fName + " " + lName; return fullName}
+})();
 
-
+combineName();
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
