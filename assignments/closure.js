@@ -2,7 +2,7 @@
 // Write a simple closure of your own creation.  Keep it simple!
 let combineName = (function () {
   let fName = "Robert";
-  return function () {let lName="Pedersen"; let fullName = fName + " " + lName; return fullName}
+  return function () {let lName="Pedersen"; let fullName = `${fName} ${lName}`; return fullName}
 })();
 
 combineName();
